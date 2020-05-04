@@ -21,10 +21,10 @@ request.onerror = (event) => {
 };
 
 function saveRecord(record) {
-  console.log("Saved Transaction")
   const transaction = db.transaction(["pending"], "readwrite");
   const store = transaction.objectStore("pending");
-
+  console.log("Saved Transaction")
+  
   store.add(record);
 }
 
